@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- favicon -->
+	<link rel="icon" type="icon" href="{% static 'favicon.ico' %}"/>
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+	<!-- Custom css -->
+	<link rel="stylesheet" href= "{% static 'styles.css' %}"/>
+	
+	{% block head %}
+	{% endblock head %}
+		
+	<!-- Custom js -->
+	<script src="{% static 'functions.js' %}" defer></script>
+	{% block scripts %}
+	{% endblock %}
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'quiz:home_view' %}">CS50 Test | {% block page-title %}{% endblock %}</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				{% if user.is_authenticated %}
+					<li class="nav-item">
+					<a class="nav-link" href="{% url 'quiz:result_view' %}">Results</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+					<a class="nav-link" href="{% url 'register' %}">Register</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="{% url 'login' %}">Login</a>
+					</li>
+				{% endif %}
+			</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</body>
+</html>

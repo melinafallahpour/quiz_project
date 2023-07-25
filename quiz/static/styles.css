@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&family=Orbitron:wght@400;500;700;800;900&family=Cairo:wght@200;400;500;600&family=Poppins:wght@300;400;500;700;900&family=Zen+Kurenaido&family=Lobster&display=swap");
+:root {
+  --primaryColor:#00362D;
+  --2ndColor:#0D5146;
+  --3rdColor:#246C60;
+  --4thColor: #5e9b90;
+  --5thColor: #aed3cd;
+  --bodyColor:#2b3130;
+  --mainWhite: rgb(244, 255, 253);
+  --mainYellow:#f7fba5;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bodyColor);
+}
+
+@media only screen and (max-width: 991px) {
+  .container {
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 991px) {
+  .container {
+    margin-top: 50px;
+  }
+}
+
+.not-visible {
+  display: none;
+}
+
+/* Navbar */
+.nav-link {
+  border-bottom: 5px solid transparent;
+  margin-top: 10px;
+}
+
+nav {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  background-color: var(--3rdColor);
+  width: 100%;
+}
+
+.nav-link:hover {
+  border-bottom: 5px solid var(--5thColor);
+}
+
+.navbar .navbar-brand {
+  color: var(--5thColor);
+  font-family: "Lobster", cursive;
+  opacity: 1;
+}
+
+/* Home view */
+#quiz-card {
+  margin: 1.5rem 1rem;
+}
+
+.card {
+  opacity: 0.9;
+  transition: 0.5s ease;
+  min-width: 13rem;
+  box-shadow: 0 0.2rem 0.5rem var(--3rdColor);
+  border-radius: 25px;
+}
+
+dt {
+  font-weight: 400;
+}
+
+dd {
+  font-weight: 300;
+}
+
+.card-header {
+  background: var(--5thColor);
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 8px 0 rgba(7, 44, 36, 0.19);
+}
+
+.btn {
+  border-radius: 15px;
+}
+
+.btn-secondary {
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+.btn-secondary:hover {
+  background-color: var(--5thColor) !important;
+  color: var(--primaryColor) !important;
+  transition: 0.5s !important;
+  border: none;
+  box-shadow: 0 4px 6px 0 rgba(7, 44, 36, 0.19);
+}
+
+.btn-outline-success {
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--5thColor) !important;
+  color: var(--primaryColor) !important;
+  transition: 0.5s !important;
+  border: none;
+  box-shadow: 0 4px 6px 0 rgba(7, 44, 36, 0.19);
+}
+
+.btn-outline-light {
+  color: var(--primaryColor);
+  background-color: var(--mainYellow);
+  border: 1px solid var(--primaryColor);
+  font-size: 1.5rem;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--5thColor) !important;
+  color: var(--primaryColor) !important;
+  transition: 0.5s !important;
+  border: none;
+  box-shadow: 0 4px 6px 0 rgba(7, 44, 36, 0.19);
+}
+
+.btn-light {
+  background-color: var(--mainWhite) !important;
+  color: var(--bodyColor);
+}
+
+.btn-light:hover {
+  background-color: var(--3rdColor) !important;
+  color: var(--5thColor) !important;
+}
+
+.btn-info {
+  background-color: var(--3rdColor) !important;
+  color: var(--5thColor) !important;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: var(--5thColor) !important;
+  color: var(--bodyColor) !important;
+}
+
+.card-footer {
+  background: var(--4thColor);
+  border-radius: 20px !important;
+  margin: -1px;
+}
+
+.card-footer .text-muted {
+  color: var(--bodyColor) !important;
+  font-weight: bold !important;
+  font-size: 1rem;
+}
+
+.card:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0.5rem 1rem black;
+}
+
+/* Result view */
+.result-table {
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, var(--2ndColor) 0%, var(--5thColor) 100%);
+  opacity: 0.8;
+}
+
+.col1 {
+  color: var(--4thColor);
+}
+
+.col2 {
+  color: var(--2ndColor);
+}
+
+.col3 {
+  color: var(--primaryColor);
+}
+
+/* Question page */
+.time-left {
+  color: var(--primaryColor);
+  background: var(--4thColor);
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.2rem;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.time {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  height: 44px;
+  width: 124px;
+  font-size: 20px;
+  color: var(--primaryColor);
+  background: var(--4thColor);
+  border: none;
+}
+
+.back:hover {
+  background-color: var(--primaryColor) !important;
+  color: var(--5thColor) !important;
+  border: var(--primaryColor) !important;
+}
+
+#quiz-box {
+  box-shadow: 0 0.2rem 0.5rem var(--4thColor);
+  padding: 0 3rem;
+  border-radius: 50px;
+  background-color: #d4e3e0;
+}
+
+#quiz-box > div {
+  padding: 8px 0;
+}
+
+.q-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primaryColor);
+}
+
+.q-num {
+  min-width: 14px;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+}
+
+.answer {
+  margin: 8px;
+  color: var(--primaryColor);
+  width: 40px;
+}
+
+label {
+  margin: 8px;
+  font-size: 1.5rem !important;
+  color: var(--primaryColor);
+}
+
+.checked-msg {
+  accent-color: var(--4thColor) !important;
+  padding-left: 2rem;
+}
+
+#submit {
+  font-size: 2rem;
+  margin: 20px;
+}
+
+/* Pagination */
+.pagination > li > a {
+  background: white;
+  color: var(--2ndColor) !important;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: var(--3rdColor);
+  background: var(--5thColor);
+  border-color: var(--4thColor);
+}
+
+.pagination > .active > span {
+  color: var(--3rdColor) !important;
+  background: var(--5thColor) !important;
+  border-color: var(--4thColor) !important;
+}
+
+.pagination > .active > span:hover {
+  background: var(--4thColor) !important;
+  border: solid 1px var(--4thColor);
+}/*# sourceMappingURL=styles.css.map */

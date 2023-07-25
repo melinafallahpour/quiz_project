@@ -1,0 +1,66 @@
+:root{
+    --primaryColor:#00362D;
+    --2ndColor:#0D5146;
+    --3rdColor:#246C60;
+    --4thColor: #5e9b90;
+    --5thColor: #aed3cd;
+    --bodyColor:#2b3130;
+    --mainWhite: rgb(244, 255, 253);
+}
+
+.container1{
+    background-color: var(--bodyColor);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+hr{
+    color: var(--4thColor);
+}
+h2{
+    color: var(--4thColor);
+    font-size: 3rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+form{
+    margin: 30px;
+}
+p{
+    color: var(--5thColor);
+    font-size: 1.5rem;
+    gap: 20px;
+}
+.text{
+    font-size: 2rem;
+    color: var(--4thColor);
+    margin-left: 20px;
+}
+a{
+    color: var(--4thColor);
+}
+.submit{
+    background-color: var(--5thColor);
+    color: var(--primaryColor);
+    width: 120px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+}
+
+.submit:hover{
+    color: var(--5thColor);
+    background-color: var(--primaryColor);
+    transition: 1s;
+}
+
+input:not(.submit){
+    border: 2px solid var(--5thColor);
+    width: 300px;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 5px;
+    padding: 10px;
+}

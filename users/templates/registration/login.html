@@ -1,0 +1,28 @@
+{% extends 'quiz/base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="../static/login.css"/>
+{% endblock head %}
+    
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block page-title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class='container1'>
+    <h2> Login here </h2>
+    <hr/>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>{{ field.label }}: <br> {{ field }}</p>
+        {% endfor %}
+        <input class='submit' type='submit' value='Login'/>
+        <p class='text'>Don't have an account? <a href="{% url 'register' %}">Signup here</a></p>
+    </form>
+</div>
+{% endblock %}

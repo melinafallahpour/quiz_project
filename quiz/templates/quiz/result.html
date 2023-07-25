@@ -1,0 +1,36 @@
+{% extends 'quiz/base.html' %}
+
+{% block title %}
+Results
+{% endblock title %}
+
+{% block page-title %}
+Results
+{% endblock %}
+
+{% block content %}
+
+<table class="table result-table">
+  <thead>
+    <tr class="table">
+      <th scope="col" class='col1'>Test</th>
+      <th scope="col" class='col2'>Score</th>
+      <th scope="col" class='col3'>Date</th>
+    </tr>
+  </thead>
+  {% for result in results %}
+  <tbody>
+      {% if result.score > 60 %}
+        <tr class="table">
+      {% else %}
+        <tr class="table-secondary">
+      {% endif %}
+          <td class='col1'>{{result.quiz}}</td>
+          <td class='col2'>{{result.score}}</td>
+          <td class='col3'>{{result.created}}</td>
+        </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+{% endblock %}
